@@ -83,8 +83,9 @@
     </pre>
       </p>
      <hr>   
-
-<body>    
+<!-- //////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////// Introduction ////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////// -->    
           <h3 id="Introduction">Introduction</h3>
             <pre id="Introduction_InText">
       Active Learning (Angluin, 1988, Cohn et al., 1994) is a paradigm where a concept is learnt by an 
@@ -102,13 +103,17 @@
       reaching a stage where information from the selected instances is contrary to the model, causing the 
       classifier confidence to drop, as in Vlachos (2008).  
            </pre>
+
+  <!-- //////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////// Analysis and discussion ////////////////////////////// -->
+  <!-- //////////////////////////////////////////////////////////////////////////////// -->
         
           <h3 id="Analysis and discussion">Analysis and discussion</h3>
             <p id="Analysis_InText">
               Analysis here 
               Table 1: Data on cost and lifespan of bridge repairs
-            <p>   
-</body>        
+            <p>  
+              
         <table>
           <tr>
             <th>£Cost of repairs</th>
@@ -135,63 +140,67 @@
             <td>9</td>
           </tr>
         </table>
+          
 
-      
+     
+<head>
+  <title>My Daily Activities</title>
+  <script type="text/javascript"src=https://www.gstatic.com/charts/loader.js></script>
+</head>            
 
-
- <!-- //////////////////////////////////////////////////////////////////////////////// -->
-  <!-- ////////////////////////////// Word count function ////////////////////////////// -->
-  <!-- //////////////////////////////////////////////////////////////////////////////// -->
-<!-- Placeholder for total word count -->
-<p id="totalWordCount"></p>
-<hr>
-<script>
-  // Function to calculate and display word count for a specified section
-  function displayWordCount(sectionId, outputId) {
-    // Get the text content from the specified section
-    const text = document.getElementById(sectionId).textContent;
-    // Split text into words based on spaces and filter out any empty strings
-    const wordArray = text.trim().split(/\s+/);
-    // Count the words
-    const wordCount = wordArray.length;
-    // Return the word count for summing purposes
-    return wordCount;
-  }
-  // Function to calculate and display total word count from selected sections
-  function displayTotalWordCount() {
-    // Calculate word count for each section and accumulate the total
-    const IntroductionCount = displayWordCount("Introduction_InText");
-    const AnalysisCount = displayWordCount("Analysis_InText");
-    // Calculate the sum of all selected sections
-    const totalWordCount = IntroductionCount + AnalysisCount;
-    // Display the total word count
-    document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
-  }
-  // Run the function for specific sections and display total count when the page loads
-  window.onload = displayTotalWordCount;
-</script>        
-
+<body>        
+<div id="chart_div"></div>
         
-        <p>
-          <h3 id="References">References</h3>
-        </p>
-        <p>
-          <p class="ex1">
-          <pre>
-      Angluin, D (1988), Qureies and concept learning. Machine learning 2, (4), 319-342.
-        
-      Brinker, K (2003), Incorporating Diversity in Active Learning with Support Vector Machines,
-      Proceedings of the Twenthieth Internaltional Conference on Machine Learning (ICML-2003).
+<script type="text/javascript">
+  google.charts.load('current', { 'packages' : ['corechart'] });
+  google.charts.setOnLoadCallback(drawChart);
 
-      Bruzzone, L, Chi, M and Marconcini, M (2006), Active learning for classification of remote sensing images.
-      In: Geoscience and Remote Sensing Symposium, 2009 IEE International, IGARSS 2009,3.
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Task', 'Hours per Day'],
+      ['Work', 8],
+      ['Sleep', 8],
+      ['Eat', 2],
+      ['Study', 4],
+      ['Exercise', 2]
+  ]);
+  
+    var options = {
+      title: 'My Daily Activities'
+    };
+  
+    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+}
+</script>   
 
-      Campbell, C, Christiani, N and Smola, A (2000), Query learning with large margin classifiers.
-      In: Proc. 17th Internat. Conf. on Machine Learning. Morgan Kaufman, Stanford, CA, 111-118.
 
-      <a href="https://www.google.com">Google weblink </a>
-          </pre>
-      </p>
+  
+  <!DOCTYPE html>
+<html>
+<head>
+ <title>Change Button Colour</title>
+</head>
+<body>
+ <button id="colorButton">Click me to change colour</button>
+  
+ <script>
+ //Get a reference to the button element
+ var button = document.getElementById("colorButton");
+ // Function to change the button color
+ function changeColor() {
+ // Generate a random color (hexadecimal)
+ var randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+ 
+ // Set the button's background color to the random color
+ button.style.backgroundColor = randomColor;
+ }
+ // Add a click event listener to the button
+ button.addEventListener("click", changeColor);
+ </script>
+</body>
+</html>
+  
 <!-- //////////////////////////////////////////////////////////////////////////////// -->
   <!-- ////////////////////////////// Adding last update ////////////////////////////// -->
   <!-- //////////////////////////////////////////////////////////////////////////////// -->
@@ -241,65 +250,60 @@
     window.onload = getLastUpdatedTime;
 </script>
 
+
+  
+<!-- //////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////// Word count function ////////////////////////////// -->
+  <!-- //////////////////////////////////////////////////////////////////////////////// -->
+<!-- Placeholder for total word count -->
+<p id="totalWordCount"></p>
+<hr>
+<script>
+  // Function to calculate and display word count for a specified section
+  function displayWordCount(sectionId, outputId) {
+    // Get the text content from the specified section
+    const text = document.getElementById(sectionId).textContent;
+    // Split text into words based on spaces and filter out any empty strings
+    const wordArray = text.trim().split(/\s+/);
+    // Count the words
+    const wordCount = wordArray.length;
+    // Return the word count for summing purposes
+    return wordCount;
+  }
+  // Function to calculate and display total word count from selected sections
+  function displayTotalWordCount() {
+    // Calculate word count for each section and accumulate the total
+    const IntroductionCount = displayWordCount("Introduction_InText");
+    const AnalysisCount = displayWordCount("Analysis_InText");
+    // Calculate the sum of all selected sections
+    const totalWordCount = IntroductionCount + AnalysisCount;
+    // Display the total word count
+    document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
+  }
+  // Run the function for specific sections and display total count when the page loads
+  window.onload = displayTotalWordCount;
+</script>        
+
+  
+        <p>
+          <h3 id="References">References</h3>
+        </p>
+        <p>
+          <p class="ex1">
+          <pre>
+      Angluin, D (1988), Qureies and concept learning. Machine learning 2, (4), 319-342.
         
-          
-<!DOCTYPE html>
-<html>
-<head>
- <title>Change Button Colour</title>
-</head>
-<body>
- <button id="colorButton">Click me to change colour</button>
-  
- <script>
- //Get a reference to the button element
- var button = document.getElementById("colorButton");
- // Function to change the button color
- function changeColor() {
- // Generate a random color (hexadecimal)
- var randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
- 
- // Set the button's background color to the random color
- button.style.backgroundColor = randomColor;
- }
- // Add a click event listener to the button
- button.addEventListener("click", changeColor);
- </script>
-</body>
-</html>
-     
-<head>
-  <title>My Daily Activities</title>
-  <script type="text/javascript"src=https://www.gstatic.com/charts/loader.js></script>
-</head>            
+      Brinker, K (2003), Incorporating Diversity in Active Learning with Support Vector Machines,
+      Proceedings of the Twenthieth Internaltional Conference on Machine Learning (ICML-2003).
 
-<body>        
-<div id="chart_div"></div>
-        
-<script type="text/javascript">
-  google.charts.load('current', { 'packages' : ['corechart'] });
-  google.charts.setOnLoadCallback(drawChart);
+      Bruzzone, L, Chi, M and Marconcini, M (2006), Active learning for classification of remote sensing images.
+      In: Geoscience and Remote Sensing Symposium, 2009 IEE International, IGARSS 2009,3.
 
-  function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ['Task', 'Hours per Day'],
-      ['Work', 8],
-      ['Sleep', 8],
-      ['Eat', 2],
-      ['Study', 4],
-      ['Exercise', 2]
-  ]);
-  
-    var options = {
-      title: 'My Daily Activities'
-    };
-  
-    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-    chart.draw(data, options);
-}
-</script>   
+      Campbell, C, Christiani, N and Smola, A (2000), Query learning with large margin classifiers.
+      In: Proc. 17th Internat. Conf. on Machine Learning. Morgan Kaufman, Stanford, CA, 111-118.
 
-
-
+      <a href="https://www.google.com">Google weblink </a>
+          </pre>
+      </p>
   
 
