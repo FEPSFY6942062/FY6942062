@@ -15,7 +15,7 @@
         table{
           font-family: arial, sans-serif;
           border-collapse: collapse;
-          width: 30%
+          width: 80%
 
         }
 
@@ -23,6 +23,7 @@
           border: 1px solid #dddddd;
           text-align: left;
           padding: 8px;
+          vertical-align:top
         }
 
         tr:nth-child(even) {
@@ -33,6 +34,7 @@
     <style>
   p.exl {
     margin-left:250px;
+    
   } 
   </style>
     </head>
@@ -70,6 +72,9 @@
           </tr>
         </table>
         <hr>
+<!-- ///////////////////////////////////////////////////////////////////////////-->
+<!-- ////////////////////////////// Abstract ////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////// -->   
         <p>
           <h3 id="Abstract">Abstract</h3>
         </p>
@@ -80,12 +85,14 @@ lorem
     </pre>
       </p>
      <hr>   
-<!-- //////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////-->
 <!-- ////////////////////////////// Introduction ////////////////////////////// -->
-<!-- //////////////////////////////////////////////////////////////////////////////// -->    
+<!-- ////////////////////////////////////////////////////////////////////////// -->    
           <h3 id="Introduction">Introduction</h3>
             <p id="Introduction_InText">
-              Noise pollution affects many of us, with an estimated 17 million people across Europe suffering chronic annoyance due to environmental noise (European Environment Agency, 2025). Beyond being a nuisance, noise pollution has serious health implications, and it is considered the third most significant environmental cause of ill health in Western Europe, resulting in the loss of approximately 1.3 million healthy life years annually (European Environment Agency, 2025). Conversely, nature is widely accepted as beneficial for both mental and physical health. (World Health Organization (no date) ). By 2050, two thirds of the world’s population are expected to live in urban areas, (United Nations, 2018) and so creating sustainable cities is essential. <br>
+            <p style="font-family:verdana;">
+           <p style= line-height:1.8>
+              Noise pollution affects many of us, with an estimated 17 million people across Europe suffering chronic annoyance due to environmental noise (European Environment Agency, 2025). Beyond being a nuisance, noise pollution has serious health implications, and is considered the third most significant environmental cause of ill health in Western Europe, resulting in the loss of approximately 1.3 million healthy life years annually (European Environment Agency, 2025). Conversely, nature is widely accepted as beneficial for both mental and physical health. (World Health Organization (no date) ). By 2050, two thirds of the world’s population are expected to live in urban areas, (United Nations, 2018) and so creating sustainable cities is essential. <br>
               Green walls are a way of introducing nature into urban environments, utilising the large areas of wall space typically available in modern cities. Both practical and aesthetic, green walls have many documented benefits, notably reducing urban heat and air pollution. ((Cardinali Balderrama Arztmann and Pottgiesser, 2023)).  This article will firstly introduce the types of green walls. It will then focus on their application in reducing noise pollution, discussing both the direct and indirect effects they can have.
               </p>
 
@@ -93,37 +100,44 @@ lorem
   <!-- ////////////////////////////// Analysis and discussion ////////////////////////////// -->
   <!-- //////////////////////////////////////////////////////////////////////////////// -->
         
-          <h3 id="Analysis and discussion">Analysis and discussion</h3>
-            <p id="Analysis_InText">
-              Analysis here 
-              Table 1: Data on cost and lifespan of bridge repairs
+          <h3 id="Impact on noise pollution">Impact on noise pollution</h3>
+            <p id="Impact_on_noise_pollution">
+             In urban environments, noise is made of three components: direct, reflected and diffracted sound. (CITIES ALIVE) Definitions of these terms are summarised in Table 1 (ARUP). 
+<br>
+<u>Direct effects</u><br>
+Studies have suggested that vegetation reduces sound levels primarily due to three effects: diffraction, absorption and destructive interference.  ((Van Renterghem Botteldooren and Verheyen, 2012)).<br> 
+1.	DIFFRACTION. Vegetated surfaces are uneven in nature, as a result of plant leaves, twigs and branches. The gaps in the surface results in soundwaves being diffracted around the vegetation, altering the direct path from source to ear and therefore reducing sound levels.  <br>
+2.	ABSORPTION. Sound waves cause vibration in plant matter. It is therefore suggested that the noise level is reduced, as the sound energy is converted to kinetic energy, and dissipated as heat.<br>  
+3.	DESTRUCTIVE INTERFERENCE. The soil or substrate required for rooting of plants can lead to destructive interference of sound waves, reducing the direct contribution. Sound is reflected, reducing sound levels and shifting towards lower frequencies due to the ground effect. As soil is acoustically porous, this effect is enhanced . <br>
+Specific research into the use of green walls in noise reduction is limited ((Pérez Coma and Cabeza, 2018).{Azkorra, 2015 #8). Acoustic performance of green walls can vary due to differences in vegetation, support structures, and external factors, as summarised in Table X. 
+
             <p>  
               
         <table>
           <tr>
-            <th>£Cost of repairs</th>
-            <th>Lifespan of repairs (years)</th>
+            <th>Vegetation</th>
+            <th>Structure</th>
+            <th>External</th>
           </tr>
           <tr>
-            <td>0.7m</td>
-            <td>2 </td>
+            <td>Thickness of vegetation layer<br><br>
+Leaf area density<br><br>
+Soil composition and thickness<br>
+Moisture content <br><br>
+</td>
+            <td>Presence of air gap between wall and support structure<br><br>
+Mass of structure<br><br>
+Insulation capacity of structure materials<br><br>
+Presence of joints between modules, causing air gaps<br><br>
+</td>
+            <td>
+              Weather conditions<br><br>
+Location relative to sound source <br><br>
+Location relative to built environment<br><br>
+
+            </td>
           </tr>
-          <tr>
-            <td>3.3m</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>2.6m</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <td>17.4m</td>
-            <td>7</td>
-          </tr>
-          <tr>
-            <td>8.8m</td>
-            <td>9</td>
-          </tr>
+          
         </table>
           
 
@@ -259,9 +273,9 @@ lorem
   function displayTotalWordCount() {
     // Calculate word count for each section and accumulate the total
     const IntroductionCount = displayWordCount("Introduction_InText");
-    const AnalysisCount = displayWordCount("Analysis_InText");
+    const ImpactCount = displayWordCount("Impact_on_noise_pollution");
     // Calculate the sum of all selected sections
-    const totalWordCount = IntroductionCount + AnalysisCount;
+    const totalWordCount = IntroductionCount + ImpactCount;
     // Display the total word count
     document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
   }
